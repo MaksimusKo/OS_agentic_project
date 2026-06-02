@@ -1,0 +1,49 @@
+# ─────────────────────────────────────────────────────────────────
+# ScholarAgent AI — Python dependency manifest
+# ─────────────────────────────────────────────────────────────────
+# Install: pip install -r requirements.txt
+# Tested with Python 3.11+
+# ─────────────────────────────────────────────────────────────────
+
+# ── FastAPI + ASGI server ─────────────────────────────────────────
+fastapi>=0.111.0,<1.0.0
+uvicorn[standard]>=0.29.0,<1.0.0
+python-multipart>=0.0.9           # Required for form data (future file uploads)
+
+# ── LangChain ecosystem ───────────────────────────────────────────
+langchain>=0.2.0,<0.4.0
+langchain-core>=0.2.0,<0.4.0
+langchain-community>=0.2.0,<0.4.0
+langchain-ollama>=0.1.0,<0.3.0    # ChatOllama + OllamaEmbeddings
+
+# ── LangGraph ────────────────────────────────────────────────────
+langgraph>=0.1.0,<0.3.0
+
+# ── Numerical computation ─────────────────────────────────────────
+numpy>=1.26.0,<3.0.0              # Cosine similarity + vector math
+
+# ── Database integrations (ready-to-enable) ───────────────────────
+# asyncpg>=0.29.0                 # Async PostgreSQL driver (uncomment for pg)
+# pgvector>=0.2.0                 # pgvector Python client
+# qdrant-client>=1.9.0            # Qdrant vector DB client
+
+# ── Validation & serialisation ────────────────────────────────────
+pydantic>=2.7.0,<3.0.0
+
+# ── HTTP client (used by LangChain Ollama internally) ────────────
+httpx>=0.27.0,<1.0.0
+aiofiles>=23.1.0,<24.0.0
+
+# ── Observability (optional, recommended for production) ──────────
+# opentelemetry-api>=1.24.0
+# opentelemetry-sdk>=1.24.0
+# opentelemetry-instrumentation-fastapi>=0.45b0
+
+# ── Testing ───────────────────────────────────────────────────────
+pytest>=8.2.0
+pytest-asyncio>=0.23.0
+httpx>=0.27.0                     # AsyncClient for FastAPI TestClient
+
+tavily-python
+requests
+beautifulsoup4

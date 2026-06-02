@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScholarAgent AI</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Agentic Scholarship Assistant</p>
+          <h1>ScholarAgent AI</h1>
+          <p class="hero-copy">
+            Plan, search, evaluate, and refine scholarship opportunities with a
+            fast and simple browser UI.
+          </p>
+        </div>
+        <div class="status-panel">
+          <strong>Agent pipeline</strong>
+          <div class="pipeline-steps" id="pipelineSteps">
+            <span class="step active">Planner</span>
+            <span class="step">Search</span>
+            <span class="step">Evaluate</span>
+            <span class="step">Refine</span>
+            <span class="step">Recommend</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <section class="card input-panel">
+          <h2>Scholarship prompt</h2>
+          <form id="scholarForm">
+            <label for="prompt">Prompt</label>
+            <textarea id="prompt" rows="4">Find scholarships for a CS student in Seoul with a 3.7 GPA.</textarea>
+
+            <label for="gpa">GPA</label>
+            <input id="gpa" type="number" min="0" max="4" step="0.01" value="3.70" />
+
+            <label for="major">Major</label>
+            <input id="major" type="text" value="Computer Science" />
+
+            <label for="residency">Residency</label>
+            <input id="residency" type="text" value="South Korea" />
+
+            <label for="interests">Interests</label>
+            <input id="interests" type="text" value="machine learning, open-source" />
+
+            <label for="searchMode">Search mode</label>
+            <select id="searchMode">
+              <option value="general">General</option>
+              <option value="university_only">University / government only</option>
+            </select>
+
+            <button type="submit" class="primary-btn">Run agent</button>
+          </form>
+          <div class="form-footnote">
+            This page uses plain HTML, CSS, and JavaScript to call the ScholarAgent backend.
+          </div>
+        </section>
+
+        <section class="card output-panel">
+          <div class="topline">
+            <div>
+              <p class="section-label">Agent summary</p>
+              <h2>Results</h2>
+            </div>
+            <div id="spinner" class="spinner hidden"></div>
+          </div>
+
+          <div id="answerBox" class="answer-box">Submit the form to activate the scholarship agent.</div>
+          <div id="searchCommand" class="search-command hidden"></div>
+
+          <div id="diagnostics" class="diagnostics hidden">
+            <div><strong>Tool cycles:</strong> <span id="toolCycles">0</span></div>
+            <div><strong>Messages:</strong> <span id="messageCount">0</span></div>
+            <div><strong>Latency:</strong> <span id="latency">0ms</span></div>
+          </div>
+
+          <div id="resultsContainer" class="results-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
