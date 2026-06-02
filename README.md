@@ -2,19 +2,6 @@
 
 A local scholarship recommendation platform with a plain HTML/CSS/JS frontend and a FastAPI backend.
 
-The app serves a browser dashboard from `app/static` and exposes `/api/chat` for the scholarship agent loop.
-
----
-
-## What changed
-
-- Frontend is now vanilla **HTML + CSS + JavaScript**
-- No `npm` or React build is required for the app
-- FastAPI serves both the frontend and the `/api/chat` endpoint
-- The UI renders agent answers, scholarship matches, and diagnostics
-
----
-
 ## Project structure
 
 ```
