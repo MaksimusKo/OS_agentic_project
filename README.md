@@ -43,13 +43,9 @@ prjct/
 
 (Optional) Ollama if you want local LangGraph model execution.
 
-### Install dependencies
-
 ```bash
-cd C:\Users\max\Downloads\prjct
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+ollama pull llama3.1
+ollama pull nomic-embed-text```
 ```
 
 ### Run the app
