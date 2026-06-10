@@ -45,7 +45,7 @@ prjct/
 
 ```bash
 ollama pull llama3.1
-ollama pull nomic-embed-text```
+ollama pull nomic-embed-text
 ```
 
 ### Run the app
